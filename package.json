@@ -22,7 +22,7 @@
     "express": "^5.1.0",
     "helmet": "^8.1.0",
     "morgan": "^1.10.0",
-    "swagger-express-cli": "^1.0.0",
+    "swagger-express-cli": "^1.0.1",
     "zod": "^3.25.67"
   },
   "devDependencies": {
