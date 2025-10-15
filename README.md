@@ -1,61 +1,67 @@
-# Express Starter Project - Candidate Test
+# 🪙 Node.js Blockchain – Full User Guide
 
-## Problem 1: Implement CRUD Operations for a Product Resource
-
-**Task**: Create a REST API for managing products. Each product has the following fields:
-
-- `id` (unique identifier)
-- `name` (string)
-- `description` (string)
-- `price` (number)
-- `created_at` (timestamp)
-
-### Requirements:
-
-1. **GET** `/api/products`: Retrieve all products.
-2. **GET** `/api/products/:id`: Retrieve a specific product by its ID.
-3. **POST** `/api/products`: Add a new product (ensure data validation for `name`, `description`, and `price`).
-4. **PUT** `/api/products/:id`: Update a product’s information.
-5. **DELETE** `/api/products/:id`: Delete a product by its ID.
-
-### Bonus:
-
-- Add input validation using a library like `express-validator` or `joi`.
+A fully-featured educational blockchain built with **Node.js** and **Express**.  
+This project demonstrates how blockchain technology works internally — including block creation, mining, proof-of-work, transaction validation, and RESTful APIs for interaction.
 
 ---
 
-## Problem 2: Implement User Authentication with JWT
+## 📖 Table of Contents
 
-**Task**: Implement a simple authentication system for a user. Each user has:
-
-- `id` (unique identifier)
-- `username` (string)
-- `password` (string, stored securely)
-
-### Requirements:
-
-1. **POST** `/api/auth/register`: Register a new user (hash the password before storing).
-2. **POST** `/api/auth/login`: Authenticate a user and return a JWT token upon successful login.
-3. **POST** `/api/auth/protected`: A protected route that requires JWT authorization to access (use middleware to verify the JWT token).
-
-### Bonus:
-
-- Implement user login rate-limiting (to prevent brute-force attacks).
+1. [Overview](#overview)
+2. [Architecture](#architecture)
+3. [Installation](#installation)
+4. [Configuration](#configuration)
+5. [Running the Node](#running-the-node)
+6. [API Reference](#api-reference)
+7. [Mining Process](#mining-process)
+8. [Data Persistence](#data-persistence)
+9. [Project Structure](#project-structure)
+10. [Developer Guide](#developer-guide)
+11. [Testing](#testing)
+12. [Troubleshooting](#troubleshooting)
+13. [Extending the Blockchain](#extending-the-blockchain)
+14. [License](#license)
 
 ---
 
-## Problem 3: Implement Search for Products by Name
+## 🧠 Overview
 
-**Task**: Add a search functionality for products. Implement the following:
+This blockchain system implements a **proof-of-work (PoW)** consensus model.  
+Each node maintains its own copy of the ledger. Blocks contain verified transactions and cryptographic hashes linking them together, ensuring immutability and integrity.
 
-1. **GET** `/api/products/search`: Accept a `q` query parameter (for example, `/api/products/search?q=laptop`) and return all products whose `name` contains the query string.
+Key Features:
 
-### Requirements:
+- RESTful API for blockchain access
+- Transaction creation and validation
+- Proof-of-Work mining mechanism
+- Persistent JSON storage
+- Modular architecture with ~90 `.js` files across 9 folders
+- Easily extensible for P2P networking, wallets, and smart contracts
 
-- The search should be case-insensitive.
-- Use MySQL to perform the search (hint: `LIKE` queries).
-- If no products are found, return a message indicating that no results were found.
+---
 
-### Bonus:
+- **Express Layer** — Handles HTTP requests and routes.
+- **Core Layer** — Implements blockchain logic.
+- **Service Layer** — Logging, validation, and persistence utilities.
+- **Data Layer** — Stores blocks and transactions in local JSON files.
+- **Config Layer** — Defines network settings, difficulty, and mining reward.
 
-- Implement pagination for search results (e.g., limit the results to 10 products per page, and use query parameters like `page`).
+---
+
+## ⚙️ Installation
+
+### Prerequisites
+
+- Node.js **v18 or higher**
+- npm package manager
+
+### Steps
+
+```bash
+# Clone the repository
+git clone https://github.com/elonstiff/express-tech-check.git
+cd blockchain_project
+
+# Install dependencies
+npm install
+```
