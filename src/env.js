@@ -3,6 +3,9 @@ import { z } from "zod/v4";
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
   PORT: z.coerce.number().default(3000),
+  JWT_SECRET: z.string().min(1, "JWT_SECRET is required"),
+  AUTH_USERNAME: z.string().min(1, "AUTH_USERNAME is required"),
+  AUTH_PASSWORD: z.string().min(1, "AUTH_PASSWORD is required"),
 });
 
 try {

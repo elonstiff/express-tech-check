@@ -1,7 +1,17 @@
-// src/routes/auth.js
-const r = require('express').Router();
-const ctrl = require('../controllers/authController');
+import { Router } from "express";
+import { login, register, profile } from "../controllers/authController.js";
+import { verifyJwt } from "../middleware/jwt.js";
 
-r.post('/login', ctrl.login);
+const r = Router();
 
-module.exports = r;
+// Public routes
+r.post("/login", login);
+r.post("/register", register);
+
+// Protected routes
+r.get("/ping", verifyJwt, (req, res) => {
+  res.json({ ok: true, user: req.user });
+});
+r.get("/profile", verifyJwt, profile);
+
+export default r;

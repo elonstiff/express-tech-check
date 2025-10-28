@@ -22,7 +22,8 @@
     "express": "^5.1.0",
     "helmet": "^8.1.0",
     "morgan": "^1.10.0",
-    "zod": "^3.25.67"
+    "zod": "^3.25.67",
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.16.2",

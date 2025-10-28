@@ -1,3 +1,5 @@
+// Load environment variables first (must be before env.js import)
+import "./loadEnv.js";
 import app from "./app.js";
 import { env } from "./env.js";
 

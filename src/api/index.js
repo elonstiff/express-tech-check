@@ -1,5 +1,6 @@
 import express from "express";
 import emojis from "./emojis.js";
+import authRoutes from "../routes/auth.js";
 import InitConfig from "../config/index.js";
 import InitConsensus from "../consensus/index.js";
 import InitControllers from "../controllers/index.js";
@@ -19,6 +20,7 @@ router.get("/", (req, res) => {
 });
 
 router.use("/emojis", emojis);
+router.use("/auth", authRoutes);
 
 /* Init Configuration */
 InitConfig();
